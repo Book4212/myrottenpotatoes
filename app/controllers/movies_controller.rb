@@ -4,8 +4,10 @@ class MoviesController < ApplicationController
 	end
 
 	def show
-		id = params[:id] # retrieve movie ID from URL routh
-		@movie = Movie.find(id) # look up movie by unique ID
-		# will render app/views/movies/show.html.haml by defult
+		
+		@movie = Movie.find_by_id(params[:id]) # what if this movie not in DB?
+  		# BUG: we should check @movie for validity here!
+
 	end
+	%h1= @movie.title
 end
