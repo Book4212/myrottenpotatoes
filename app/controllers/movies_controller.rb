@@ -9,5 +9,4 @@ class MoviesController < ApplicationController
   		# BUG: we should check @movie for validity here!
 
 	end
-	%h1= @movie.title
 end
