@@ -9,4 +9,7 @@ class MoviesController < ApplicationController
   		# BUG: we should check @movie for validity here!
 
 	end
+	def new
+		#default: render 'new' template
+	end
 end
