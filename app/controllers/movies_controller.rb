@@ -13,7 +13,7 @@ class MoviesController < ApplicationController
 		#default: render 'new' template
 	end
 	def create
-		@movie = Movie.create!(params[:movies])
+		@movie = Movie.create!(params[:movie])
 		flash[:notice] = "#{@movie.title} was successfully created."
 		redirect_to movies_path
 	end
@@ -23,7 +23,7 @@ class MoviesController < ApplicationController
 	
 	def update
 		@movie = Movie.find params[:id]
-		@movie.update_attridutes!(params[:movie])
+		@movie.update_attributes!(params[:movie])
 		respond_to do |client_wants|
 			client_wants.html { redirect_to movie_path(@movie)}
 			client_wants.xml {render :xml => @movie.to_xml}
