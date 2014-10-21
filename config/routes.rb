@@ -1,6 +1,15 @@
 Myrottenpotatoes::Application.routes.draw do
-  resources :movies
-  root :to => redirect('/movies')
+	resources :movies do
+		resources :reviews
+	end
+	root :to => redirect('/movies')
+	get 'auth/twitter' ,:as => 'login'
+	get  'auth/:provider/callback' => 'sessions#create'
+	post 'logout' => 'sessions#destroy'
+	get  'auth/failure' => 'sessions#failure'
+	
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

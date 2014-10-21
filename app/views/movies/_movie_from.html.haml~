@@ -1,0 +1,11 @@
+-# in _movie_from.html.haml (the partial)
+	= label :movie, :title, 'Title'
+	= text_field :movie, 'title'
+	
+	= label :movie, :rating, 'Rating'
+	= select :movie, :rating, Movie.all_ratings
+	= label :movie, :release_date, 'Released On'
+  = date_select :movie, :release_date
+
+
+

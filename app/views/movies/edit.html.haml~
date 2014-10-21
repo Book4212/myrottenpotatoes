@@ -1,0 +1,5 @@
+%h2 Edit Existing Movie
+
+= form_tag "/movies/#{@movie.id}", :method => :put do
+  =render :partial => 'movie_form'
+  = submit_tag 'Save Changes'
